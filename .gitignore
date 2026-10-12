@@ -1,0 +1,39 @@
+# Secrets
+.env
+*.env
+!.env.example
+
+# Python / Django
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+backend/db.sqlite3
+backend/media/
+backend/staticfiles/
+
+# Node / React
+node_modules/
+frontend/dist/
+frontend/.vite/
+npm-debug.log*
+
+# ML: large files and datasets
+ml/artifacts/*
+!ml/artifacts/.gitkeep
+ml/data/
+*.h5
+*.keras
+*.pkl
+*.joblib
+*.npy
+*.npz
+
+# User uploads
+uploads/
+
+# OS / Editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
