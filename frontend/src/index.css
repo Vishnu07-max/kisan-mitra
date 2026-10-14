@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@theme {
+  --color-leaf-50: #f1f8f1;
+  --color-leaf-100: #dcefdc;
+  --color-leaf-500: #3f9142;
+  --color-leaf-600: #2f7a33;
+  --color-leaf-700: #26622a;
+  --color-leaf-900: #163a19;
+  --color-cream: #faf6ec;
+  --color-cream-dark: #f0e9d6;
+  --color-soil: #7a5a3a;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-cream);
+  color: #1f2a1f;
+  font-family: system-ui, -apple-system, "Segoe UI", "Noto Sans Devanagari", sans-serif;
+}
