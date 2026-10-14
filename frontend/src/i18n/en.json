@@ -1,0 +1,26 @@
+{
+  "app": { "name": "Kisan Mitra", "tagline": "Smart Farming, Better Harvests." },
+  "nav": { "home": "Home", "features": "Features", "login": "Login" },
+  "landing": {
+    "heroTitle": "Your smart companion for farming",
+    "heroText": "Check possible crop diseases, explore suitable crops, view weather forecasts, compare mandi prices, and ask farming questions in your own language.",
+    "getStarted": "Get started",
+    "featuresTitle": "What Kisan Mitra will offer",
+    "comingSoon": "Coming soon",
+    "footer": "Built for farmers. Information here supports decisions and does not replace expert advice."
+  },
+  "features": {
+    "disease": { "title": "Crop Doctor", "desc": "Upload a leaf photo to learn about possible diseases." },
+    "crop": { "title": "Crop Recommendation", "desc": "See crop options based on your soil and season." },
+    "weather": { "title": "Weather Forecast", "desc": "Temperature and rain forecasts for your farm." },
+    "market": { "title": "Mandi Prices", "desc": "Compare prices across different markets." },
+    "assistant": { "title": "AI Farming Assistant", "desc": "Ask farming questions in Hindi or English." }
+  },
+  "status": {
+    "title": "Server status",
+    "checking": "Checking...",
+    "ok": "Server is running",
+    "error": "Could not reach the server",
+    "retry": "Try again"
+  }
+}
