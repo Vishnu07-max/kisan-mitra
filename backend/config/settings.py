@@ -24,7 +24,12 @@ INSTALLED_APPS = [
     # Third-party
     "rest_framework",
     "corsheaders",
+    "rest_framework_simplejwt.token_blacklist",
+    # Our apps
+    "apps.accounts",
 ]
+    
+
 
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",  # must be first
@@ -92,6 +97,7 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 # ---------- Django REST Framework ----------
+
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework_simplejwt.authentication.JWTAuthentication",
@@ -99,6 +105,8 @@ REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": (
         "rest_framework.permissions.IsAuthenticated",
     ),
+    "EXCEPTION_HANDLER": "config.exceptions.custom_exception_handler",
+    "DEFAULT_THROTTLE_RATES": {"auth": "10/min"},
 }
 
 SIMPLE_JWT = {
