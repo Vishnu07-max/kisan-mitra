@@ -1,33 +1,51 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { useAuth } from '../context/AuthContext'
 import LanguageSwitch from './LanguageSwitch'
 
 export default function Navbar() {
   const { t } = useTranslation()
+  const { isAuthenticated, logout } = useAuth()
+  const navigate = useNavigate()
+
+  const onLogout = async () => {
+    await logout()
+    navigate('/')
+  }
+
+  const linkClass = 'px-3 py-2 text-leaf-900 hover:text-leaf-600'
+  const primaryButton =
+    'inline-flex min-h-11 items-center rounded-lg bg-leaf-600 px-4 py-2 font-semibold text-white hover:bg-leaf-700'
 
   return (
     <header className="sticky top-0 z-10 border-b border-cream-dark bg-cream/95 backdrop-blur">
-      <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+      <nav className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-2 px-4 py-3">
         <Link to="/" className="flex items-center gap-2 text-xl font-bold text-leaf-700">
           <span aria-hidden="true">🌾</span>
           {t('app.name')}
         </Link>
 
-        <div className="flex items-center gap-3">
-          <Link
-            to="/"
-            className="hidden px-3 py-2 text-leaf-900 hover:text-leaf-600 sm:inline"
-          >
-            {t('nav.home')}
-          </Link>
+        <div className="flex items-center gap-2 sm:gap-3">
           <LanguageSwitch />
-          <button
-            disabled
-            title={t('landing.comingSoon')}
-            className="min-h-11 cursor-not-allowed rounded-lg bg-leaf-600 px-4 py-2 font-semibold text-white opacity-60"
-          >
-            {t('nav.login')}
-          </button>
+          {isAuthenticated ? (
+            <>
+              <Link to="/dashboard" className={`${linkClass} hidden sm:inline`}>
+                {t('nav.dashboard')}
+              </Link>
+              <button onClick={onLogout} className={primaryButton}>
+                {t('nav.logout')}
+              </button>
+            </>
+          ) : (
+            <>
+              <Link to="/login" className={linkClass}>
+                {t('nav.login')}
+              </Link>
+              <Link to="/register" className={primaryButton}>
+                {t('nav.register')}
+              </Link>
+            </>
+          )}
         </div>
       </nav>
     </header>

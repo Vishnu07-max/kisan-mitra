@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import HealthStatus from '../components/HealthStatus'
+import { Link } from 'react-router-dom'
 
 const features = [
   { key: 'disease', icon: '🍃' },
@@ -22,12 +23,11 @@ export default function Landing() {
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-leaf-900/80">{t('landing.heroText')}</p>
           <div className="mt-8 flex flex-wrap items-center gap-4">
-            <button
-              disabled
-              className="min-h-12 cursor-not-allowed rounded-lg bg-leaf-600 px-6 py-3 text-lg font-semibold text-white opacity-60"
-            >
+            <Link
+              to="/register"
+              className="inline-flex min-h-12 items-center rounded-lg bg-leaf-600 px-6 py-3 text-lg font-semibold text-white hover:bg-leaf-700">
               {t('landing.getStarted')}
-            </button>
+              </Link>
             <HealthStatus />
           </div>
         </div>

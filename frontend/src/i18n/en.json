@@ -1,6 +1,13 @@
 {
   "app": { "name": "Kisan Mitra", "tagline": "Smart Farming, Better Harvests." },
-  "nav": { "home": "Home", "features": "Features", "login": "Login" },
+  "common": { "loading": "Loading..." },
+  "nav": {
+    "home": "Home",
+    "dashboard": "Dashboard",
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout"
+  },
   "landing": {
     "heroTitle": "Your smart companion for farming",
     "heroText": "Check possible crop diseases, explore suitable crops, view weather forecasts, compare mandi prices, and ask farming questions in your own language.",
@@ -22,5 +29,39 @@
     "ok": "Server is running",
     "error": "Could not reach the server",
     "retry": "Try again"
+  },
+  "auth": {
+    "loginTitle": "Welcome back",
+    "loginSubtitle": "Log in to manage your farms.",
+    "registerTitle": "Create your account",
+    "registerSubtitle": "It takes less than a minute.",
+    "username": "Username",
+    "password": "Password",
+    "fullName": "Full name (optional)",
+    "language": "Preferred language",
+    "loginButton": "Log in",
+    "registerButton": "Create account",
+    "working": "Please wait...",
+    "noAccount": "New here?",
+    "haveAccount": "Already have an account?",
+    "errors": {
+      "required": "This field is required.",
+      "usernameShort": "Username must be at least 3 characters.",
+      "passwordShort": "Password must be at least 8 characters.",
+      "credentials": "Incorrect username or password.",
+      "validation": "Please fix the highlighted fields.",
+      "throttled": "Too many attempts. Please wait a minute and try again.",
+      "network": "Could not reach the server. Check your connection and try again.",
+      "server": "Something went wrong. Please try again."
+    }
+  },
+  "dashboard": {
+    "welcome": "Welcome, {{name}}",
+    "subtitle": "Your farming dashboard",
+    "profileTitle": "Your profile",
+    "username": "Username",
+    "language": "Language",
+    "nextTitle": "What's next",
+    "nextText": "Farm management is coming in the next step. More tools will appear here as we build them."
   }
 }
