@@ -1,0 +1,77 @@
+{
+  "farms": {
+    "navLabel": "My farms",
+    "title": "My farms",
+    "subtitle": "Add your farms so Kisan Mitra can give location-based help.",
+    "add": "Add farm",
+    "edit": "Edit",
+    "delete": "Delete",
+    "cancel": "Cancel",
+    "save": "Save",
+    "saving": "Saving...",
+    "addTitle": "Add a farm",
+    "editTitle": "Edit farm",
+    "emptyTitle": "No farms yet",
+    "emptyText": "Add your first farm to get started.",
+    "loadError": "Could not load your farms.",
+    "retry": "Try again",
+    "deleteConfirm": "Delete \"{{name}}\"? This cannot be undone.",
+    "deleteError": "Could not delete the farm. Please try again.",
+    "saveError": "Could not save the farm. Please try again.",
+    "acres": "acres",
+    "coordsHint": "If you don't know the latitude and longitude, leave both empty.",
+    "dashboardCardTitle": "Your farms",
+    "dashboardCardText": "Add and manage your farms.",
+    "dashboardCardLink": "View farms",
+    "fields": {
+      "name": "Farm name",
+      "state": "State",
+      "district": "District",
+      "soilType": "Soil type",
+      "irrigation": "Irrigation",
+      "area": "Area (acres)",
+      "latitude": "Latitude (optional)",
+      "longitude": "Longitude (optional)"
+    },
+    "errors": {
+      "areaInvalid": "Area must be greater than 0.",
+      "latInvalid": "Latitude must be between -90 and 90.",
+      "lonInvalid": "Longitude must be between -180 and 180.",
+      "coordsBoth": "Fill in both latitude and longitude, or leave both empty."
+    },
+    "soil": {
+      "alluvial": "Alluvial",
+      "black": "Black (Regur)",
+      "red": "Red",
+      "laterite": "Laterite",
+      "sandy": "Sandy",
+      "loamy": "Loamy",
+      "clay": "Clay",
+      "unknown": "Not sure"
+    },
+    "irrigationTypes": {
+      "rainfed": "Rainfed",
+      "canal": "Canal",
+      "tubewell": "Tubewell / Borewell",
+      "drip": "Drip",
+      "sprinkler": "Sprinkler",
+      "other": "Other"
+    }
+  },
+  "profile": {
+    "navLabel": "Profile",
+    "title": "Your profile",
+    "subtitle": "View and update your details.",
+    "fullName": "Full name",
+    "username": "Username",
+    "language": "Preferred language",
+    "phone": "Phone number (optional)",
+    "phoneHint": "10 to 13 digits, for example 9876543210",
+    "state": "State",
+    "district": "District",
+    "save": "Save changes",
+    "saving": "Saving...",
+    "saved": "Profile saved.",
+    "saveError": "Could not save your profile. Please try again."
+  }
+}

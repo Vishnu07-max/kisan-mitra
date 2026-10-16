@@ -13,7 +13,7 @@ export default function Navbar() {
     navigate('/')
   }
 
-  const linkClass = 'px-3 py-2 text-leaf-900 hover:text-leaf-600'
+  const linkClass = 'px-2 py-2 text-sm text-leaf-900 hover:text-leaf-600 sm:px-3 sm:text-base'
   const primaryButton =
     'inline-flex min-h-11 items-center rounded-lg bg-leaf-600 px-4 py-2 font-semibold text-white hover:bg-leaf-700'
 
@@ -25,17 +25,25 @@ export default function Navbar() {
           {t('app.name')}
         </Link>
 
-        <div className="flex items-center gap-2 sm:gap-3">
-          <LanguageSwitch />
-          {isAuthenticated ? (
+        <div className="flex flex-wrap items-center gap-1 sm:gap-3">
+          {isAuthenticated && (
             <>
-              <Link to="/dashboard" className={`${linkClass} hidden sm:inline`}>
+              <Link to="/dashboard" className={linkClass}>
                 {t('nav.dashboard')}
               </Link>
-              <button onClick={onLogout} className={primaryButton}>
-                {t('nav.logout')}
-              </button>
+              <Link to="/farms" className={linkClass}>
+                {t('farms.navLabel')}
+              </Link>
+              <Link to="/profile" className={linkClass}>
+                {t('profile.navLabel')}
+              </Link>
             </>
+          )}
+          <LanguageSwitch />
+          {isAuthenticated ? (
+            <button onClick={onLogout} className={primaryButton}>
+              {t('nav.logout')}
+            </button>
           ) : (
             <>
               <Link to="/login" className={linkClass}>

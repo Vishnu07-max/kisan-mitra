@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useAuth } from '../context/AuthContext'
 
@@ -24,11 +25,17 @@ export default function Dashboard() {
               <dd>{profile.preferred_language === 'hi' ? 'हिन्दी' : 'English'}</dd>
             </div>
           </dl>
+          <Link to="/profile" className="mt-3 inline-block font-semibold text-leaf-700 underline">
+            {t('profile.navLabel')}
+          </Link>
         </section>
 
         <section className="rounded-xl border border-cream-dark bg-white p-5 shadow-sm">
-          <h2 className="text-lg font-semibold text-leaf-700">{t('dashboard.nextTitle')}</h2>
-          <p className="mt-2 text-leaf-900/80">{t('dashboard.nextText')}</p>
+          <h2 className="text-lg font-semibold text-leaf-700">{t('farms.dashboardCardTitle')}</h2>
+          <p className="mt-2 text-leaf-900/80">{t('farms.dashboardCardText')}</p>
+          <Link to="/farms" className="mt-3 inline-block font-semibold text-leaf-700 underline">
+            {t('farms.dashboardCardLink')}
+          </Link>
         </section>
       </div>
     </main>
