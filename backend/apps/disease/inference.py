@@ -130,7 +130,7 @@ def build_result(probs, class_names, version, *, disease_min, healthy_min,
         "outcome": "no_disease_detected" if best["is_healthy"] else "disease_possible",
         "experimental": best["crop"] in experimental_crops,
         "top_prediction": best,
-        "top_k": top,
+        "top_k": [x for x in top if x["crop"] not in withheld_crops],
     }
 
 

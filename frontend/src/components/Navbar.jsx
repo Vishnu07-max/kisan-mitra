@@ -34,6 +34,10 @@ export default function Navbar() {
               <Link to="/farms" className={linkClass}>
                 {t('farms.navLabel')}
               </Link>
+              <Link to="/crop-doctor" className={linkClass}>
+                {t('disease.navLabel')}
+              </Link>
+              
               <Link to="/profile" className={linkClass}>
                 {t('profile.navLabel')}
               </Link>

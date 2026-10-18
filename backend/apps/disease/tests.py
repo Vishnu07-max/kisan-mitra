@@ -46,6 +46,10 @@ class BuildResultTests(SimpleTestCase):
 
     def test_experimental_flag(self):
         self.assertTrue(result([0.0, 0.0, 0.0, 1.0])["experimental"])
+    def test_withheld_crops_are_not_listed_in_top_k(self):
+        res = result([0.92, 0.0, 0.07, 0.01])
+        self.assertEqual(res["status"], "ok")
+        self.assertTrue(all(x["crop"] != "Rice" for x in res["top_k"]))
 
     def test_top_k_sorted_by_confidence(self):
         confs = [t["confidence"] for t in result([0.92, 0.04, 0.02, 0.02])["top_k"]]
