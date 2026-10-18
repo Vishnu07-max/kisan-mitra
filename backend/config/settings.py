@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     # Our apps
     "apps.accounts",
     "apps.farms",
+    "apps.disease",
 ]
     
 
@@ -114,3 +115,16 @@ SIMPLE_JWT = {
     "ACCESS_TOKEN_LIFETIME": timedelta(minutes=30),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=7),
 }
+
+# ---------- Crop Doctor (ML) ----------
+def _csv(name, default):
+    return [x.strip() for x in os.getenv(name, default).split(",") if x.strip()]
+
+
+DISEASE_MODEL_DIR = os.getenv("DISEASE_MODEL_DIR") or str(
+    BASE_DIR.parent / "ml" / "artifacts" / "disease" / "v2"
+)
+DISEASE_CONF_MIN = float(os.getenv("DISEASE_CONF_MIN", "0.90"))
+DISEASE_CONF_HEALTHY = float(os.getenv("DISEASE_CONF_HEALTHY", "0.95"))
+DISEASE_WITHHELD_CROPS = _csv("DISEASE_WITHHELD_CROPS", "Rice")
+DISEASE_EXPERIMENTAL_CROPS = _csv("DISEASE_EXPERIMENTAL_CROPS", "Sugarcane,Wheat")
