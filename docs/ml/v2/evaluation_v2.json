@@ -1,0 +1,83 @@
+{
+  "version": "v2",
+  "plantvillage_test_files": 8300,
+  "plantvillage_accuracy": 0.9432530120481928,
+  "indian_test_files": 729,
+  "indian_accuracy": 0.8587105624142661,
+  "indian_per_class": {
+    "Rice___Bacterial Leaf Blight": {
+      "recall": 0.703125,
+      "n": 64
+    },
+    "Rice___Brown Spot": {
+      "recall": 0.8333333333333334,
+      "n": 54
+    },
+    "Rice___Healthy": {
+      "recall": 0.8421052631578947,
+      "n": 38
+    },
+    "Rice___Tungro": {
+      "recall": 0.8375,
+      "n": 80
+    },
+    "Sugarcane___Healthy": {
+      "recall": 0.9456521739130435,
+      "n": 92
+    },
+    "Sugarcane___Mosaic": {
+      "recall": 0.85,
+      "n": 80
+    },
+    "Sugarcane___Red Rot": {
+      "recall": 0.8518518518518519,
+      "n": 81
+    },
+    "Sugarcane___Rust": {
+      "recall": 0.9775280898876404,
+      "n": 89
+    },
+    "Sugarcane___Yellow Disease": {
+      "recall": 0.775,
+      "n": 80
+    },
+    "Wheat___Healthy": {
+      "recall": 0.9565217391304348,
+      "n": 23
+    },
+    "Wheat___Septoria": {
+      "recall": 0.75,
+      "n": 16
+    },
+    "Wheat___Stripe Rust": {
+      "recall": 0.9375,
+      "n": 32
+    }
+  },
+  "macro_f1_indian_classes": 0.8649140346122567,
+  "macro_f1_all_classes": 0.9191839144678845,
+  "indian_thresholds": {
+    "0.5": {
+      "answered": 0.9643347050754458,
+      "accuracy_when_answered": 0.8662873399715505
+    },
+    "0.7": {
+      "answered": 0.8203017832647462,
+      "accuracy_when_answered": 0.9264214046822743
+    },
+    "0.8": {
+      "answered": 0.7379972565157751,
+      "accuracy_when_answered": 0.949814126394052
+    },
+    "0.9": {
+      "answered": 0.6104252400548696,
+      "accuracy_when_answered": 0.9752808988764045
+    },
+    "0.95": {
+      "answered": 0.4869684499314129,
+      "accuracy_when_answered": 0.9887323943661972
+    }
+  },
+  "external_blast_wrongly_answered_at_threshold": 0.275,
+  "external_rice_supported_accuracy": 0.3427777777777778
+}

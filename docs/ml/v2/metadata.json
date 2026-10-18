@@ -1,0 +1,22 @@
+{
+  "version": "v2",
+  "trained_at_utc": "2026-10-18T02:57:09.918444+00:00",
+  "tensorflow": "2.21.0",
+  "architecture": "MobileNetV2 (ImageNet weights) + GAP + Dropout + Dense",
+  "image_size": 224,
+  "preprocessing": "PIL: EXIF rotate, RGB, resize short side to 256 (LANCZOS), centre crop 256, JPEG quality 90 without metadata; then tf.io.decode_jpeg and tf.image.resize to 224x224 (bilinear, antialias=True), raw 0-255 float",
+  "num_classes": 41,
+  "train_images_used": 14650,
+  "validation_images_used": 3609,
+  "plantvillage_train_per_class_cap": 400,
+  "epochs_head": 3,
+  "epochs_finetune": 3,
+  "training_minutes": 26.0,
+  "validation_accuracy": 0.9172,
+  "splits": [
+    "splits_v1_std.json (PlantVillage, grouped by photo)",
+    "splits_indian.json (grouped, cap 16)"
+  ],
+  "test_set_used_in_training": false,
+  "note": "Validation accuracy is NOT the final result. Evaluate on the Test split."
+}
