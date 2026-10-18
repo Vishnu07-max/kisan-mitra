@@ -1,0 +1,106 @@
+{
+  "metadata": {
+    "version": "v1",
+    "trained_at_utc": "2026-10-18T13:34:30.929171+00:00",
+    "scikit_learn": "1.9.1",
+    "python": "3.12.10",
+    "csv_sha256": "54a5a6e5408668e668667efc50de2fc867c1b875e0431b4f54dd331b0a109a4e",
+    "rows": 2200,
+    "crops": 22,
+    "random_forest": {
+      "n_estimators": 300,
+      "tuned": false
+    },
+    "cv": "5-fold x 3 repeats, stratified. Folds overlap, so +/- is a spread, not a confidence interval.",
+    "note": "Augmented public dataset. Scores show separability within this table, not agronomic validity.",
+    "not_covered": [
+      "wheat",
+      "sugarcane",
+      "mustard",
+      "potato",
+      "barley"
+    ],
+    "rainfall_period": "not stated in the dataset"
+  },
+  "cv_by_inputs": {
+    "nutrients+ph+climate": {
+      "baseline_accuracy": 0.8629,
+      "rf_accuracy": 0.995,
+      "rf_accuracy_fold_std": 0.0025,
+      "rf_macro_f1": 0.995
+    },
+    "nutrients+ph": {
+      "baseline_accuracy": 0.5594,
+      "rf_accuracy": 0.7917,
+      "rf_accuracy_fold_std": 0.0128,
+      "rf_macro_f1": 0.7881
+    },
+    "nutrients+climate": {
+      "baseline_accuracy": 0.9045,
+      "rf_accuracy": 0.9921,
+      "rf_accuracy_fold_std": 0.0023,
+      "rf_macro_f1": 0.9921
+    },
+    "ph+climate": {
+      "baseline_accuracy": 0.6794,
+      "rf_accuracy": 0.9641,
+      "rf_accuracy_fold_std": 0.0071,
+      "rf_macro_f1": 0.964
+    },
+    "nutrients": {
+      "baseline_accuracy": 0.5955,
+      "rf_accuracy": 0.6432,
+      "rf_accuracy_fold_std": 0.018,
+      "rf_macro_f1": 0.6419
+    },
+    "ph": {
+      "baseline_accuracy": 0.0982,
+      "rf_accuracy": 0.1286,
+      "rf_accuracy_fold_std": 0.0098,
+      "rf_macro_f1": 0.1271
+    },
+    "climate": {
+      "baseline_accuracy": 0.698,
+      "rf_accuracy": 0.9208,
+      "rf_accuracy_fold_std": 0.0097,
+      "rf_macro_f1": 0.92
+    }
+  },
+  "per_crop_recall": {
+    "apple": 1.0,
+    "banana": 1.0,
+    "blackgram": 0.99,
+    "chickpea": 1.0,
+    "coconut": 1.0,
+    "coffee": 1.0,
+    "cotton": 1.0,
+    "grapes": 1.0,
+    "jute": 0.98,
+    "kidneybeans": 1.0,
+    "lentil": 1.0,
+    "maize": 1.0,
+    "mango": 1.0,
+    "mothbeans": 0.99,
+    "mungbean": 1.0,
+    "muskmelon": 1.0,
+    "orange": 1.0,
+    "papaya": 1.0,
+    "pigeonpeas": 1.0,
+    "pomegranate": 1.0,
+    "rice": 0.93,
+    "watermelon": 1.0
+  },
+  "noise_accuracy": {
+    "0.0": 0.995,
+    "0.05": 0.99,
+    "0.1": 0.9623,
+    "0.2": 0.8795
+  },
+  "nearest_neighbour_percentiles": [
+    0.16,
+    0.21,
+    0.294,
+    0.376,
+    0.473
+  ]
+}
