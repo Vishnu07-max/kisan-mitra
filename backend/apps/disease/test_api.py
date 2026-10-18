@@ -156,7 +156,6 @@ class AssessmentTests(ApiBase):
         res = self.client.get(f"{LIST}{pk}/image/")
         self.assertEqual(res.status_code, 200)
         body = b"".join(res.streaming_content)
-        res.close()
         self.assertEqual(res["Content-Type"], "image/jpeg")
         self.assertTrue(body.startswith(b"\xff\xd8"))
 
