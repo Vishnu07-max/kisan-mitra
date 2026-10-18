@@ -108,7 +108,7 @@ REST_FRAMEWORK = {
         "rest_framework.permissions.IsAuthenticated",
     ),
     "EXCEPTION_HANDLER": "config.exceptions.custom_exception_handler",
-    "DEFAULT_THROTTLE_RATES": {"auth": "10/min"},
+    "DEFAULT_THROTTLE_RATES": {"auth": "10/min", "disease": "20/min"},
 }
 
 SIMPLE_JWT = {
@@ -128,3 +128,5 @@ DISEASE_CONF_MIN = float(os.getenv("DISEASE_CONF_MIN", "0.90"))
 DISEASE_CONF_HEALTHY = float(os.getenv("DISEASE_CONF_HEALTHY", "0.95"))
 DISEASE_WITHHELD_CROPS = _csv("DISEASE_WITHHELD_CROPS", "Rice")
 DISEASE_EXPERIMENTAL_CROPS = _csv("DISEASE_EXPERIMENTAL_CROPS", "Sugarcane,Wheat")
+
+DISEASE_MAX_UPLOAD_MB = float(os.getenv("DISEASE_MAX_UPLOAD_MB", "8"))
