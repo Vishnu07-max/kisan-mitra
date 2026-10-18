@@ -1,0 +1,18 @@
+{
+  "leaves": {
+    "n": 13,
+    "wrongly_answered": 0.0
+  },
+  "other": {
+    "n": 5,
+    "wrongly_answered": 0.2
+  },
+  "relatives": {
+    "n": 6,
+    "wrongly_answered": 0.0
+  },
+  "scenery": {
+    "n": 37,
+    "wrongly_answered": 0.05405405405405406
+  }
+}
