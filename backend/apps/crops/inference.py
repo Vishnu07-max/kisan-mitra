@@ -90,6 +90,8 @@ def recommend(values, top_k=3):
 
     suggestions = []
     for i in np.argsort(probs)[::-1][:top_k]:
+        if suggestions and probs[i] < 0.02:
+            break
         crop = str(model.classes_[i])
         explanation = explain(crop, values, bundle["crop_ranges"])
         suggestions.append({
