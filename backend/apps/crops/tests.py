@@ -62,7 +62,8 @@ class ValidationTests(ApiBase):
 
     def test_full_and_ph_only_inputs_accepted(self):
         self.assertEqual(self.post(FULL).status_code, 201)
-        self.assertEqual(self.post({"ph": 6.5}).status_code, 201)
+        self.assertEqual(self.post({"N": 50, "P": 40, "K": 30, "ph": 6.5}).status_code, 201)
+        self.assertEqual(self.post({"ph": 6.5}).status_code, 400)
 
     def test_partial_nutrient_group_rejected(self):
         res = self.post({"N": 50, "P": 40})
@@ -95,7 +96,7 @@ class OwnershipTests(ApiBase):
 
     def test_history_is_own_only_newest_first(self):
         first = self.post(FULL).data["id"]
-        second = self.post({"ph": 6}).data["id"]
+        second = self.post({"N": 50, "P": 40, "K": 30}).data["id"]
         self.client.force_authenticate(user=self.bob)
         self.post(FULL)
         self.client.force_authenticate(user=self.alice)

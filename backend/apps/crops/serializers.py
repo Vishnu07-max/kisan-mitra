@@ -5,6 +5,9 @@ from rest_framework import serializers
 from .inference import FEATURES
 from .models import Recommendation
 
+NUTRIENTS = ["N", "P", "K"]
+CLIMATE = ["temperature", "humidity", "rainfall"]
+
 
 class RecommendInputSerializer(serializers.Serializer):
     N = serializers.FloatField(required=False, min_value=0, max_value=500)
@@ -21,7 +24,7 @@ class RecommendInputSerializer(serializers.Serializer):
         for f in FEATURES:
             if f in attrs and not math.isfinite(attrs[f]):
                 errors[f] = ["Enter a valid number."]
-        for cols in (["N", "P", "K"], ["temperature", "humidity", "rainfall"]):
+        for cols in (NUTRIENTS, CLIMATE):
             have = [c for c in cols if c in attrs]
             if have and len(have) != len(cols):
                 for c in cols:
@@ -29,9 +32,15 @@ class RecommendInputSerializer(serializers.Serializer):
                         errors[c] = [f"Give all of {', '.join(cols)} together, or none of them."]
         if errors:
             raise serializers.ValidationError(errors)
-        if not any(f in attrs for f in FEATURES):
+
+        has_nutrients = all(c in attrs for c in NUTRIENTS)
+        has_climate = all(c in attrs for c in CLIMATE)
+        if not (has_nutrients or has_climate):
             raise serializers.ValidationError(
-                {"non_field_errors": ["Enter soil pH, or N, P and K, or temperature, humidity and rainfall."]}
+                {"non_field_errors": [
+                    "Enter N, P and K, or temperature, humidity and rainfall. "
+                    "Soil pH alone is not enough to suggest a crop."
+                ]}
             )
         return attrs
 
