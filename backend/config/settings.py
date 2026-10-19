@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     "apps.accounts",
     "apps.farms",
     "apps.disease",
+    "apps.crops",
 ]
     
 
@@ -108,7 +109,7 @@ REST_FRAMEWORK = {
         "rest_framework.permissions.IsAuthenticated",
     ),
     "EXCEPTION_HANDLER": "config.exceptions.custom_exception_handler",
-    "DEFAULT_THROTTLE_RATES": {"auth": "10/min", "disease": "20/min"},
+    "DEFAULT_THROTTLE_RATES": {"auth": "10/min", "disease": "20/min", "crops": "30/min"},
 }
 
 SIMPLE_JWT = {
@@ -130,3 +131,6 @@ DISEASE_WITHHELD_CROPS = _csv("DISEASE_WITHHELD_CROPS", "Rice")
 DISEASE_EXPERIMENTAL_CROPS = _csv("DISEASE_EXPERIMENTAL_CROPS", "Sugarcane,Wheat")
 
 DISEASE_MAX_UPLOAD_MB = float(os.getenv("DISEASE_MAX_UPLOAD_MB", "8"))
+
+# ---------- Crop recommendation ----------
+CROP_MODEL_DIR = os.getenv("CROP_MODEL_DIR") or str(BASE_DIR.parent / "ml" / "artifacts" / "crop" / "v1")
