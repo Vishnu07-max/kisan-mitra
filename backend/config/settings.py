@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     "apps.farms",
     "apps.disease",
     "apps.crops",
+    "apps.weather",
 ]
     
 
@@ -109,7 +110,7 @@ REST_FRAMEWORK = {
         "rest_framework.permissions.IsAuthenticated",
     ),
     "EXCEPTION_HANDLER": "config.exceptions.custom_exception_handler",
-    "DEFAULT_THROTTLE_RATES": {"auth": "10/min", "disease": "20/min", "crops": "30/min"},
+    "DEFAULT_THROTTLE_RATES": {"auth": "10/min", "disease": "20/min", "crops": "30/min", "weather": "30/min"},
 }
 
 SIMPLE_JWT = {
@@ -134,3 +135,7 @@ DISEASE_MAX_UPLOAD_MB = float(os.getenv("DISEASE_MAX_UPLOAD_MB", "8"))
 
 # ---------- Crop recommendation ----------
 CROP_MODEL_DIR = os.getenv("CROP_MODEL_DIR") or str(BASE_DIR.parent / "ml" / "artifacts" / "crop" / "v1")
+
+# ---------- Weather ----------
+WEATHER_TIMEOUT_SECONDS = float(os.getenv("WEATHER_TIMEOUT_SECONDS", "8"))
+WEATHER_CACHE_SECONDS = int(os.getenv("WEATHER_CACHE_SECONDS", "1800"))
